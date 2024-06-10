@@ -7,6 +7,7 @@ import {
   faCartShopping,
   faCaretUp,
   faCaretDown,
+  faTrash
 } from "@fortawesome/free-solid-svg-icons";
 import data from "./data";
 function App() {
@@ -105,14 +106,14 @@ setCartCount(temp)
                   <div className="info">
                     <h2>{item.title}</h2>
                     <h4>{item.price}</h4>
-                    <p
+                    <FontAwesomeIcon
+                    icon={faTrash}
                       className="remove"
                       onClick={() => {
                         RemoveOne(item);
                       }}
-                    >
-                      Remove item
-                    </p>
+                   />
+                    
                   </div>
                 </div>
                 <div className="ADDREMOVE">
