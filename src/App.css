@@ -131,9 +131,11 @@ button{
 .Incre{
   font-size: 40px;
   margin-top: 26px;
+  cursor: pointer;
 }
 .Decre{
   font-size: 40px;
+  cursor: pointer;
 }
 .ADDREMOVE{
   display: flex;
