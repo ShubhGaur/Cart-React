@@ -90,8 +90,17 @@ button{
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* display: flex; */
-  /* flex-direction: row; */
+  display: flex; 
+}
+.er p {
+  background-color: yellow;
+  font-size: 22px;
+  width: 25px;
+  border-radius: 50%;
+  position: absolute;
+  left: 1434px;
+    top: 31px;
+    bottom: 845px;
 }
 header{
   display: flex;
@@ -101,8 +110,7 @@ header{
 }
 .Icon{
   font-size: 50px;
-  margin-right: 60px;
-  margin-top: 55px;
+
 }
 h1{
   font-size: 60px;
