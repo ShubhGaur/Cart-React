@@ -1,0 +1,124 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+.Block{
+  height: 158px;
+  width: 1230px;
+  
+  display: flex;
+  margin-bottom: 10px;
+  
+}
+img{
+  height: 100%;
+
+}
+button{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.items{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.bag{
+  width: 1230px;
+
+}
+.Total{
+  width: 1230px;
+}
+.head{
+  width: 50%;
+  text-align: center;
+
+}
+.er{
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+header{
+  display: flex;
+  border: 1px solid;
+  height: 160px;
+  background-color: blue;
+}
+.Icon{
+  font-size: 50px;
+  margin-right: 60px;
+  margin-top: 55px;
+}
+h1{
+  font-size: 60px;
+
+}
+button{
+  font-size: 30px;
+  background-color: blue;
+}
+.info{
+  text-align:left ;
+  font-size: 18px;
+}
+.remove{
+  cursor: pointer;
+  color: blue;
+}
+.Incredecre{
+  font-size: 40px;
+}
+.ADDREMOVE{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ADDREMOVE p{
+  font-size: 25px;
+  margin: 0px;
+}
