@@ -11,22 +11,34 @@ import {
 import data from "./data";
 function App() {
   const [items, setItems] = useState(data);
- 
-  const [cartItems, setCartItems] = useState(data);
-  var quantity = 1;
-  
+  const [cartCount, setCartCount] = useState(0);
+
+
+useEffect(()=>{
+  let temp=0;
+
+items.forEach((x)=>{
+temp+= x.amount
+})
+setCartCount(temp)
+
+},[items])
+
+
+
+  // cartCount
 
   // useEffect(()=>{
   //   fetch("https://www.course-api.com/react-useReducer-cart-project").then(response=>response.json()).then((result)=>{setItems(result)
   //     setCartItems(result)
   //   })
   // },[])
-  console.log(cartItems);
+  // console.log(cartItems);
   console.log(items);
   function RemoveAll() {
     console.log("hdftz");
     setItems([]);
-    setCartItems([]);
+    // setCartItems([]);
   }
   function RemoveOne(removeditem) {
     const newitems = items.filter((item) => {
@@ -36,20 +48,39 @@ function App() {
   }
   function Cart(IncreDecre, addedremoveditem) {
     if (IncreDecre == true) {
-      let a = [...cartItems];
-      a.push(addedremoveditem);
-      setCartItems(a);
-      quantity++;
-      console.log(cartItems);
+      console.log(addedremoveditem)
+      let t=items.find((item)=>{
+        return item==addedremoveditem
+      })
+      t.amount+=1
+
+      let temp=0;
+      items.forEach((x)=>{
+      temp+= x.amount
+      })
+      setCartCount(temp)
+      
     } else {
-      console.log("haha");
+      if(addedremoveditem.amount!=1)
+        {
+
+          let t=items.find((item)=>{
+            return item==addedremoveditem
+          })
+        t.amount-=1
+        }
+        let temp=0;
+      items.forEach((x)=>{
+      temp+= x.amount
+      })
+      setCartCount(temp)
+      
     }
   }
   let price = 0;
-  cartItems.map((cartItem)=>{
-price += cartItem.amount*cartItem.price;
-  })
-    return (
+  items.map((cartItem) => {
+    price += cartItem.amount * cartItem.price;
+  });  return (
     <>
       <header>
         <div className="head">
@@ -57,7 +88,7 @@ price += cartItem.amount*cartItem.price;
         </div>
         <div className="er">
           <FontAwesomeIcon icon={faCartShopping} className="Icon" />
-          <p>{cartItems.length}</p>
+          <p>{cartCount}</p>
         </div>
       </header>
       <div className="items">
@@ -91,7 +122,7 @@ price += cartItem.amount*cartItem.price;
                       Cart(true, item);
                     }}
                   />
-                  <h4>{quantity}</h4>
+                  <h4>{item.amount}</h4>
                   <FontAwesomeIcon
                     icon={faCaretDown}
                     className="Decre"
