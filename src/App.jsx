@@ -7,9 +7,13 @@ import { faCartShopping, faCaretUp, faCaretDown } from "@fortawesome/free-solid-
 function App() {
   const [items, setItems] = useState([])
   const [price, setPrice] = useState("")
+  const [cartItems,setCartItems] = useState([])
   useEffect(()=>{
-    fetch("https://www.course-api.com/react-useReducer-cart-project").then(response=>response.json()).then((result)=>{setItems(result)})
+    fetch("https://www.course-api.com/react-useReducer-cart-project").then(response=>response.json()).then((result)=>{setItems(result)
+      setCartItems(result)
+    })
   },[])
+  console.log(cartItems)
   console.log(items)
   function RemoveAll(){
     console.log("hdftz")
@@ -21,31 +25,44 @@ const newitems = items.filter((item)=>{
 })
 setItems(newitems);
   }
+  function Cart(IncreDecre,addedremoveditem){
+      if(IncreDecre == true){
+      
+      let a = [...cartItems]
+      a.push(addedremoveditem)
+      setCartItems(a)
+        console.log(cartItems)
+      }
+      else{
+        console.log("haha")
+      }
+  }
   return (<>
   <header>
     <div className='head'><h1>UsingReducer</h1></div>
     <div className='er'><FontAwesomeIcon
                 icon={faCartShopping}
-               className='Icon'/></div>
+               className='Icon'/><p>{cartItems.length}</p></div>
   </header>
   <div className='items'>
 
   <div className='bag'><h1>Your Bag</h1></div>
       {items.map((item)=>{
         return(<>
-        <div className='Block'>
+        <div className='Block'><div className='info1'>
           <img src={item.img}/>
           <div className='info'><h2>{item.title}</h2>
           <h4>{item.price}</h4>
           <p className='remove' onClick={()=>{RemoveOne(item)}}>Remove item</p></div>
+          </div>
         <div className='ADDREMOVE'>
         <FontAwesomeIcon
                 icon={faCaretUp}
-               className='Incredecre'/> 
-               <p>1</p>
+               className='Incre' onClick={()=>{Cart(true,item)}}/> 
+               <h4>1</h4>
                <FontAwesomeIcon
                 icon={faCaretDown}
-               className='Incredecre'/>
+               className='Decre'onClick={()=>{Cart(false,item)}}/>
         </div>
         </div>
         </>)

@@ -110,15 +110,26 @@ button{
   cursor: pointer;
   color: blue;
 }
-.Incredecre{
+.Incre{
+  font-size: 40px;
+  margin-top: 26px;
+}
+.Decre{
   font-size: 40px;
 }
 .ADDREMOVE{
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: right;
+width: 10%;
 }
-.ADDREMOVE p{
+.ADDREMOVE h4{
   font-size: 25px;
   margin: 0px;
+}
+.info1{
+  width: 90%;
+  display: flex;
+
 }
