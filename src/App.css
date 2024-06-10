@@ -119,6 +119,7 @@ h1{
 button{
   font-size: 30px;
   background-color: blue;
+  cursor: pointer;
 }
 .info{
   text-align:left ;
