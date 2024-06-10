@@ -75,7 +75,7 @@ button{
   flex-direction: row;
   font-size: 25px;
   gap: 1000px;
-
+  border-top: 1px solid;
 }
 .Total p{
   margin-left: 40px;

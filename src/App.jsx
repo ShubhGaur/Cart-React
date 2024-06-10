@@ -80,6 +80,7 @@ setCartCount(temp)
   let price = 0;
   items.map((cartItem) => {
     price += cartItem.amount * cartItem.price;
+
   });  return (
     <>
       <header>
@@ -137,7 +138,7 @@ setCartCount(temp)
         })}
         <div className="Total">
           <p>Total</p>
-          <p>{price}</p>
+          <p>{Math.round(price)}</p>
         </div>
         <button
           onClick={() => {
