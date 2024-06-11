@@ -92,15 +92,21 @@ button{
   text-align: center;
   display: flex; 
 }
-.er p {
+.r{
+  position: relative;
+}
+
+.r p {
+  position: absolute;
+  top: -30px;
+  right:-8px;
+
   background-color: yellow;
   font-size: 22px;
   width: 25px;
   border-radius: 50%;
-  position: absolute;
-  left: 1434px;
-    top: 31px;
-    bottom: 845px;
+  
+  
 }
 header{
   display: flex;

@@ -89,9 +89,9 @@ setCartCount(temp)
           <h1>UsingReducer</h1>
         </div>
         <div className="er">
-          <FontAwesomeIcon icon={faCartShopping} className="Icon" />
+          <div className="r"><FontAwesomeIcon icon={faCartShopping} className="Icon" />
           <p>{cartCount}</p>
-        </div>
+          </div></div>
       </header>
       <div className="items">
         <div className="bag">
